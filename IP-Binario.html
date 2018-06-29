@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<style>
+    input{
+    	border: 1px solid #808080;
+    	width: 50px;
+    	height: 20px;
+    }
+    #total1{
+    	font-weight:bold;
+    	width: 110px;
+    }
+
+    #total2{
+    	font-weight:bold;
+    	width: 110px;
+    }
+    #total3{
+    	font-weight:bold;
+    	width: 110px;
+    }
+    #total4{
+    	font-weight:bold;
+    	width: 110px;
+    }
+
+    #convertir{
+    	font-weight:bold;
+    	width: 110px;
+    }
+
+
+
+
+    
+</style>
+<head>
+	<title>Conversion a binario</title>
+</head>
+<body>
+	
+	<center>
+		<h1>Convertir a binario</h1>
+		<div>
+			IP: 
+		    <input type="number" id="valor1" onkeyup="convertir();">
+		    .<input type="number" id="valor2" onkeyup="convertir();">
+		    .<input type="number" id="valor3" onkeyup="convertir();">
+		    .<input type="number" id="valor4" onkeyup="convertir();">
+	    </div>
+	</center>
+    
+    <br>
+    <center>
+    	<div>
+	    	<span>
+	    		Total: <input type="text" id="total1" disabled value="0">
+	    		.<input type="text" id="total2" disabled value="0">
+	    		.<input type="text" id="total3" disabled value="0">
+	    		.<input type="text" id="total4" disabled value="0">
+	    	</span>
+	    </div>
+	    <br>
+	    <input type="button" onclick="convertir();" value="Convertir" id="convertir">
+    </center>
+    
+</body>
+<script type="text/javascript">
+	
+	function convertir() {
+		
+		n1=document.getElementById('valor1').value;
+		i1=0;
+		var bin1 = [];
+
+		n2=document.getElementById('valor2').value;
+		i2=0;
+		var bin2 = [];
+
+		n3=document.getElementById('valor3').value;
+		i3=0;
+		var bin3 = [];
+
+		n4=document.getElementById('valor4').value;
+		i4=0;
+		var bin4 = [];
+
+		while(n1>0){
+			modulo=n1%2;
+			bin1[i1] = [modulo];
+			i1++;
+			n1=n1/2;
+			n1=parseInt(n1);
+			//document.write("binario" + n1);
+		}
+
+		while(n2>0){
+			modulo=n2%2;
+			bin2[i2] = [modulo];
+			i2++;
+			n2=n2/2;
+			n2=parseInt(n2);
+			//document.write("binario" + n1);
+		}
+
+		while(n3>0){
+			modulo=n3%2;
+			bin3[i3] = [modulo];
+			i3++;
+			n3=n3/2;
+			n3=parseInt(n3);
+			//document.write("binario" + n1);
+		}
+
+		while(n4>0){
+			modulo=n4%2;
+			bin4[i4] = [modulo];
+			i4++;
+			n4=n4/2;
+			n4=parseInt(n4);
+			//document.write("binario" + n1);
+		}
+
+		var binario1 = bin1.reverse(); 
+		var binario2 = bin2.reverse(); 
+		var binario3 = bin3.reverse(); 
+		var binario4 = bin4.reverse(); 
+		
+		document.getElementById("total1").value= binario1.join("");
+		document.getElementById("total2").value= binario2.join("");
+		document.getElementById("total3").value= binario3.join("");
+		document.getElementById("total4").value= binario4.join("");
+
+	}
+
+</script>
+
+<footer>
+	<h4>Hecho por: Steven Alejandro Cajas Cabrera</h4>
+</footer>
+</html>
